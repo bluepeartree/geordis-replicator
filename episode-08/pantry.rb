@@ -4,7 +4,7 @@
 # to make the recipe if it's working properly.
 
 class Pantry
-
+binding.pry
   def initialize
     @shelf = Location.new
     stock_shelf
