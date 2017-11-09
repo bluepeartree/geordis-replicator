@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -40,7 +42,7 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
+    # binding.pry
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -61,14 +63,14 @@ class Replicator
     # shoud contain the proper ingredients.
 
     # To retrieve the glass from inside the replicator, use:
-    #   glass_inside_replicator
+      glass_inside_replicator
     # And then to see what's inside the glass, use:
-    #   glass_inside_replicator.inside.contents
+      glass_inside_replicator.inside.contents
     transport_ingredients_to_glass
 
     # This methods mixes the ingredients in the glass around.
     # It returns nil, even if successful, but if you look at:
-    #   glass_inside_replicator.inside.contents
+      glass_inside_replicator.inside.contents
     # then you may find the ingredients order has changed.
     # If it's successful, all the ingredients should still be in the glass.
     mix
@@ -107,7 +109,6 @@ class Replicator
 
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
-
     # Go through recipe and transport each ingredient
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|
